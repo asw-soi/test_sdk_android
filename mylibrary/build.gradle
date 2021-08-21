@@ -47,17 +47,23 @@ dependencies {
     implementation 'com.squareup.okhttp3:logging-interceptor:3.12.1'
 }
 
+repositories {
+    mavenCentral()
+}
+
 def repo = new File(rootDir, "repository")
 
 apply plugin: "maven"
+
+//import com.langrands.mylibrary.data.LockerGetResData
 
 uploadArchives {
     repositories {
         mavenDeployer {
             repository url: "file://${repo.absolutePath}"
             pom.version = '1.0.0'
-            pom.groupId = 'com.worlddowntown.emailvalidator'
-            pom.artifactId = 'emailvalidator'
+            pom.groupId = 'com.langrands.mylibrary'
+            pom.artifactId = 'mylibrary'
         }
     }
 }
